@@ -75,8 +75,8 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 /* ABOUT */
 .sh{font-size:clamp(44px,5.5vw,76px);font-weight:500;line-height:.93;
   letter-spacing:-.02em;text-transform:uppercase}
-.abt{padding:104px 48px;border-top:1px solid var(--r)}
-.ag{display:grid;grid-template-columns:300px 1fr;gap:64px;align-items:start}
+.abt{padding:0;border-top:1px solid var(--r);min-height:100vh;display:flex;align-items:center}
+.ag{display:flex;flex-direction:column;gap:40px;max-width:680px;margin:0 auto;padding:104px 48px}
 .ab-stat{display:flex;flex-direction:column;gap:10px}
 .ab-stat-n{font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.02em;line-height:1;color:var(--k)}
 .ab-stat-l{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--l);max-width:200px;line-height:1.6}
@@ -206,7 +206,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 
 /* RESPONSIVE */
 @media(max-width:960px){
-  .ag{grid-template-columns:1fr;gap:24px}
+  .ag{gap:28px;padding:72px 22px}
   .wr{grid-template-columns:1fr;gap:14px}
   .camp-grid{grid-template-columns:1fr 1fr}
   .cg:last-child{grid-column:1/-1;flex-direction:row;border-right:none}
@@ -229,7 +229,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
   .press-sec,.clients-sec{padding:56px 22px}
   .press-logos,.clients-logos{justify-content:center;gap:28px 32px;padding:0}
   .press-logos svg{height:20px}.clients-logos svg{height:26px}
-  .abt,.why-sec,.svc{padding:64px 22px}
+  .why-sec,.svc{padding:64px 22px}
   .camp-hd{padding:64px 22px 0}
   .camp-grid{grid-template-columns:1fr;margin-top:36px}
   .cg{border-right:none!important;border-top:1px solid var(--r)}
@@ -340,14 +340,6 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
     <div class="logo-cell"><a href="#work"><img src="Xbox-Logo.wine.svg" alt="Xbox" class="logo-lg"></a></div>
   </div>
 </section>
-<section id="about" class="abt rv">
-  <div class="ag">
-    <div>
-      <p class="bt">RANG was founded by <strong>Reangsei Phos</strong>, a filmmaker and creator featured in HYPEBEAST and VICE. He grew his personal presence from 2,000 to 300,000+ followers in under two years — not through paid ads, but through A/B testing, original storytelling, and obsessive campaign experimentation.</p>
-      <p class="bt">The same framework powers every RANG client campaign. We understand how audiences think, how trends evolve, and what truly drives engagement, trust, and long-term conversion.</p>
-    </div>
-  </div>
-</section>
 <section id="why" class="why-sec rv"><div class="why-hdr"><h2 class="why-hl">Data Driven Results</h2><p class="why-intro">We build short-form content systems designed around how people actually watch and engage online, not traditional marketing formats.</p></div><div class="why-edit rs"><div class="we"><span class="wnum">01</span><div><div class="wt">Built for how people scroll</div><p class="wd">We design content around what actually holds attention, sparks connection, and gets people to keep watching.</p></div></div><div class="we"><span class="wnum">02</span><div><div class="wt">Original ideas</div><p class="wd">Every campaign starts with a concept designed by research, trends, audience behaviour, and the cultural moment.</p></div></div><div class="we"><span class="wnum">03</span><div><div class="wt">Science lab approach</div><p class="wd">We study competitors, test different angles, and iterate based on real performance.</p></div></div></div></section>
 <section id="work" class="camp-sec rv">
   <div class="camp-hd"><h2 class="sh">Campaigns</h2></div>
@@ -400,6 +392,14 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
     <div class="svc-item"><span class="svc-n">02</span><div class="svc-t">Video Production</div><p class="svc-d">We produce short-form vertical content from concept to edit, designed to stop the scroll, hold attention, and drive real audience action.</p></div>
     <div class="svc-item"><span class="svc-n">03</span><div class="svc-t">Brand Strategy</div><p class="svc-d">We create tailored brand strategies that define your voice, align with your audience, and build a strong foundation for long-term organic growth.</p></div>
     <div class="svc-item"><span class="svc-n">04</span><div class="svc-t">Influencer Marketing</div><p class="svc-d">We connect your brand with creators who genuinely align with your values to build authentic partnerships that expand reach and lasting credibility.</p></div>
+  </div>
+</section>
+<section id="about" class="abt rv">
+  <div class="ag">
+    <div>
+      <p class="bt">RANG was founded by <strong>Reangsei Phos</strong>, a filmmaker and creator featured in HYPEBEAST and VICE. He grew his personal presence from 2,000 to 300,000+ followers in under two years — not through paid ads, but through A/B testing, original storytelling, and obsessive campaign experimentation.</p>
+      <p class="bt">The same framework powers every RANG client campaign. We understand how audiences think, how trends evolve, and what truly drives engagement, trust, and long-term conversion.</p>
+    </div>
   </div>
 </section>
 <section id="contact" class="ct rv">
