@@ -40,7 +40,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 /* HERO — video must fill panel at full 1280x720 quality */
 .hero{display:grid;grid-template-columns:40% 60%;min-height:calc(100vh - 60px)}
 .hl{display:flex;flex-direction:column;justify-content:flex-end;padding:64px 52px 88px 48px}
-.hey{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--m);font-weight:400;margin-bottom:32px}
+.hey{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--k);font-weight:500;margin-bottom:32px}
 .ht{font-size:clamp(76px,12vw,158px);font-weight:500;line-height:.88;
   letter-spacing:-.01em;text-transform:uppercase;margin-bottom:40px}
 .hs{font-size:19px;color:var(--m);max-width:340px;line-height:1.85;font-weight:300}
@@ -51,12 +51,12 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
   padding:40px 48px 48px;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,transparent 100%);
   z-index:2;pointer-events:none}
 .hsn{font-size:88px;font-weight:500;line-height:1;color:#fff;letter-spacing:-.02em;display:block}
-.hsl{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+.hsl{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
   color:rgba(255,255,255,.46);margin-top:8px;display:block}
 
 /* LOGOS — image grid, even spacing, no stretching */
-.sec-label{display:block;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.22em;
-  text-transform:uppercase;color:rgba(12,12,10,.75);font-weight:500;margin-bottom:52px}
+.sec-label{display:block;font-family:'DM Mono',monospace;font-size:14px;letter-spacing:.22em;
+  text-transform:uppercase;color:rgba(12,12,10,.9);font-weight:600;margin-bottom:52px}
 .press-sec{padding:80px 48px;border-top:1px solid var(--r);text-align:center}
 .press-logos{display:grid;grid-template-columns:repeat(4,1fr);align-items:center;gap:24px;padding:0 24px}
 .press-logos .logo-cell{display:flex;align-items:center;justify-content:center;padding:8px 16px}
@@ -130,7 +130,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 .cg:last-child{border-right:none}
 .cg-vid{aspect-ratio:4/5;background:#111;overflow:hidden;position:relative;flex-shrink:0;
   cursor:pointer}
-.cg-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+.cg-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;
   transition:opacity .25s}
 .cg-vid:not(.hov) video{opacity:1}
 /* faded state applied by JS when another is hovered */
@@ -325,26 +325,25 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 <section class="press-sec rv">
   <span class="sec-label">As Seen In</span>
   <div class="press-logos rs">
-    <div class="logo-cell"><img src="HYPEBEAST-Logo.svg" alt="HYPEBEAST"></div>
-    <div class="logo-cell"><img src="Vice_Logo.png" alt="Vice" class="logo-vice"></div>
-    <div class="logo-cell"><img src="CBC_logo.svg.png" alt="CBC"></div>
-    <div class="logo-cell"><img src="Toronto_Star-Logo.wine.png" alt="Toronto Star" class="logo-lg"></div>
+    <div class="logo-cell"><a href="https://hypebeast.com/2022/8/reangsei-phos-toronto-talisman-national-film-festival-for-talented-youth-nffty-award" target="_blank" rel="noopener"><img src="HYPEBEAST-Logo.svg" alt="HYPEBEAST"></a></div>
+    <div class="logo-cell"><a href="https://www.vice.com/en/article/growing-up-with-a-superstitious-beliefs-mother-mental-health/" target="_blank" rel="noopener"><img src="Vice_Logo.png" alt="Vice" class="logo-vice"></a></div>
+    <div class="logo-cell"><a href="https://www.cbc.ca/news/canada/toronto/filmmaker-talisman-asian-representation-1.6535439" target="_blank" rel="noopener"><img src="CBC_logo.svg.png" alt="CBC"></a></div>
+    <div class="logo-cell"><a href="https://www.thestar.com/sponsored-sections/preparing-students-for-jobs-of-the-future/students-learning-new-ways-of-thinking-through-york-university-s-innovation-and-entrepreneurship-program/article_9dcc0279-caba-455b-8546-691505283043.html" target="_blank" rel="noopener"><img src="Toronto_Star-Logo.wine.png" alt="Toronto Star" class="logo-lg"></a></div>
   </div>
 </section>
 <section class="clients-sec rv">
   <span class="sec-label">Clients</span>
   <div class="clients-logos rs">
-    <div class="logo-cell"><img src="Asus-Logo.png" alt="ASUS" class="logo-lg"></div>
-    <div class="logo-cell"><img src="Microsoft_logo_(2012).svg.webp" alt="Microsoft"></div>
-    <div class="logo-cell"><img src="ByteDance.svg" alt="ByteDance"></div>
-    <div class="logo-cell"><img src="Xbox-Logo.wine.svg" alt="Xbox" class="logo-lg"></div>
+    <div class="logo-cell"><a href="#work"><img src="Asus-Logo.png" alt="ASUS" class="logo-lg"></a></div>
+    <div class="logo-cell"><a href="#work"><img src="Microsoft_logo_(2012).svg.webp" alt="Microsoft"></a></div>
+    <div class="logo-cell"><a href="#work"><img src="ByteDance.svg" alt="ByteDance"></a></div>
+    <div class="logo-cell"><a href="#work"><img src="Xbox-Logo.wine.svg" alt="Xbox" class="logo-lg"></a></div>
   </div>
 </section>
 <section id="about" class="abt rv">
   <div class="ag">
-    <div class="ab-stat"><span class="ab-stat-n">2K&nbsp;&rarr;&nbsp;350K+</span><span class="ab-stat-l">Followers grown in under two years</span></div>
     <div>
-      <p class="bt">RANG was founded by <strong>Reangsei Phos</strong>, a filmmaker and creator featured in HYPEBEAST and VICE. He grew his personal presence from 2,000 to 350,000+ followers in under two years — not through paid ads, but through A/B testing, original storytelling, and obsessive campaign experimentation.</p>
+      <p class="bt">RANG was founded by <strong>Reangsei Phos</strong>, a filmmaker and creator featured in HYPEBEAST and VICE. He grew his personal presence from 2,000 to 300,000+ followers in under two years — not through paid ads, but through A/B testing, original storytelling, and obsessive campaign experimentation.</p>
       <p class="bt">The same framework powers every RANG client campaign. We understand how audiences think, how trends evolve, and what truly drives engagement, trust, and long-term conversion.</p>
     </div>
   </div>
