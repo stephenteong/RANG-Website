@@ -318,7 +318,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
     <p class="hs">A creator-led agency. We handle <strong>strategy, scripting, filming and editing</strong> end-to-end for brands ready to grow organically.</p>
   </div>
   <div class="hr">
-    <video autoplay muted loop playsinline data-sv="h"></video>
+    <video autoplay muted loop playsinline preload="auto" data-sv="h"></video>
     <div class="hst"><span class="hsn">12M+</span><span class="hsl">Organic Views · ASUS Zenbook Deadline</span></div>
   </div>
 </section>
@@ -345,7 +345,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
   <div class="camp-hd"><h2 class="sh">Campaigns</h2></div>
   <div class="camp-grid">
     <div class="cg">
-      <div class="cg-vid"><video autoplay muted loop playsinline preload="none" data-sv="a"></video></div>
+      <div class="cg-vid"><video autoplay muted loop playsinline preload="auto" data-sv="a"></video></div>
       <div class="cg-body">
         <div class="cg-logo"><img src="Asus-Logo.png" alt="ASUS" class="logo-lg"></div>
         <span class="cg-name">Zenbook Deadline</span>
@@ -358,7 +358,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
       </div>
     </div>
     <div class="cg">
-      <div class="cg-vid"><video autoplay muted loop playsinline preload="none" data-sv="m"></video></div>
+      <div class="cg-vid"><video autoplay muted loop playsinline preload="auto" data-sv="m"></video></div>
       <div class="cg-body">
         <div class="cg-logo"><img src="Microsoft_logo_(2012).svg.webp" alt="Microsoft"></div>
         <span class="cg-name">Co-Pilot: Back to School</span>
@@ -371,7 +371,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
       </div>
     </div>
     <div class="cg">
-      <div class="cg-vid"><video autoplay muted loop playsinline preload="none" data-sv="x"></video></div>
+      <div class="cg-vid"><video autoplay muted loop playsinline preload="auto" data-sv="x"></video></div>
       <div class="cg-body">
         <div class="cg-logo"><img src="Xbox-Logo.wine.svg" alt="Xbox" class="logo-lg"></div>
         <span class="cg-name">ROG Xbox Ally</span>
@@ -440,27 +440,16 @@ var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
 <script>
 (function(){
   var _V={
-    h:"hero.webm",
-    a:"asus.webm",
-    m:"msft.webm",
-    x:"xbox.webm"
+    h:"ASUS Deadline Horizontal Coffee.mp4",
+    a:"ASUS Deadline Vertical Loop.mp4",
+    m:"Microsoft Co-Pilot Commercial.mp4",
+    x:"Xbox Campaign.mp4"
   };
   function initVids(){
-    // Hero loads immediately
-    var hero=document.querySelector('video[data-sv="h"]');
-    if(hero){hero.src=_V['h'];}
-    // Campaign videos lazy-load when scrolled into view
-    var lazyVids=Array.from(document.querySelectorAll('video[data-sv]:not([data-sv="h"])'));
-    var vidObs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var v=e.target;
-          if(!v.getAttribute('src')){v.src=_V[v.getAttribute('data-sv')];v.play().catch(function(){});}
-          vidObs.unobserve(v);
-        }
-      });
-    },{rootMargin:'200px'});
-    lazyVids.forEach(function(v){vidObs.observe(v);});
+    document.querySelectorAll('video[data-sv]').forEach(function(v){
+      v.src=_V[v.getAttribute('data-sv')];
+      v.play().catch(function(){});
+    });
   }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded',initVids);
