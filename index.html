@@ -75,7 +75,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 /* ABOUT */
 .sh{font-size:clamp(44px,5.5vw,76px);font-weight:500;line-height:.93;
   letter-spacing:-.02em;text-transform:uppercase}
-.abt{padding:120px 48px;border-top:1px solid var(--r)}
+.abt{padding:180px 48px;border-top:1px solid var(--r)}
 .ag{display:flex;flex-direction:column;gap:40px;max-width:680px;margin:0 auto}
 .ab-stat{display:flex;flex-direction:column;gap:10px}
 .ab-stat-n{font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.02em;line-height:1;color:var(--k)}
@@ -449,21 +449,18 @@ var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isInter
     // Hero loads immediately
     var hero=document.querySelector('video[data-sv="h"]');
     if(hero){hero.src=_V['h'];}
-    // Campaign videos load only when scrolled into view
+    // Campaign videos lazy-load when scrolled into view
     var lazyVids=Array.from(document.querySelectorAll('video[data-sv]:not([data-sv="h"])'));
     var vidObs=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(e.isIntersecting){
           var v=e.target;
-          if(!v.src){v.src=_V[v.getAttribute('data-sv')];v.play();}
+          if(!v.getAttribute('src')){v.src=_V[v.getAttribute('data-sv')];v.play().catch(function(){});}
           vidObs.unobserve(v);
         }
       });
     },{rootMargin:'200px'});
     lazyVids.forEach(function(v){vidObs.observe(v);});
-    // Legacy fallback — keep the forEach stub so nothing else breaks
-      v.play().catch(function(){});
-    });
   }
   if(document.readyState==='loading'){
     document.addEventListener('DOMContentLoaded',initVids);
