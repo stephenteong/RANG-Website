@@ -40,10 +40,12 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 /* HERO — video must fill panel at full 1280x720 quality */
 .hero{display:grid;grid-template-columns:40% 60%;min-height:calc(100vh - 60px)}
 .hl{display:flex;flex-direction:column;justify-content:flex-end;padding:64px 52px 88px 48px}
+.hgrp{width:fit-content;max-width:100%}
 .hey{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--k);font-weight:500}
+@media(min-width:1250px){.hey{font-size:clamp(10px,calc(1vw - 2.6px),13px);white-space:nowrap}}
 .ht{font-size:clamp(51px,8vw,106px);font-weight:500;line-height:.88;margin-left:-.04em;
   letter-spacing:-.01em;text-transform:uppercase;margin-bottom:18px}
-.hs{font-size:clamp(13px,1.12vw,17px);color:var(--m);max-width:none;line-height:1.85;font-weight:300;margin-top:52px;text-align:justify;text-wrap:balance}
+.hs{font-size:clamp(13px,1.12vw,18.5px);color:var(--m);width:0;min-width:100%;line-height:1.85;font-weight:300;margin-top:52px;text-align:justify;text-wrap:balance}
 .hs strong{color:var(--k);font-weight:400}
 .hr{position:relative;background:#111;overflow:hidden}
 .hr video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -86,7 +88,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 
 /* WHY RANG — all variants share the new full-width header */
 /* The heading goes across the full width on one line; intro sentence sits below */
-.why-sec{padding:67px 48px;border-top:1px solid var(--r)}
+.why-sec{padding:104px 48px 67px;border-top:1px solid var(--r)}
 .why-hdr{margin-bottom:52px}
 .why-hl{
   font-size:clamp(28px,5.2vw,70px);
@@ -177,7 +179,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 .cmp-desc{font-size:17px;color:var(--m);line-height:1.85;font-weight:300;margin-top:32px}
 
 /* SERVICES 2×2 equal grid */
-.svc{padding:67px 48px;border-top:1px solid var(--r)}
+.svc{padding:67px 48px}
 .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);
   gap:2px;background:var(--r);border:1px solid var(--r);margin-top:56px}
 .svc-item{background:var(--c);padding:44px;display:flex;flex-direction:column;gap:18px}
@@ -207,7 +209,7 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 .rs.in>*:nth-child(5){opacity:1;transform:none;transition-delay:.36s}
 
 /* RESPONSIVE */
-@media(max-width:1100px){
+@media(max-width:1249px){
   .hero{grid-template-columns:1fr;grid-template-rows:auto 56vw;min-height:auto}
   .hl{padding:56px 32px 48px;grid-row:1}
   .hr{grid-row:2;height:56vw;min-height:240px}
@@ -274,8 +276,10 @@ body{background:var(--c);color:var(--k);font-family:'DM Sans',sans-serif;font-we
 <section id="home" class="hero">
   <div class="hl">
     <h1 class="ht">RANG</h1>
-    <span class="hey">Short form content that turns views into customers</span>
-    <p class="hs">A creator-led agency. We handle <strong>strategy, scripting, filming and editing</strong> end-to-end for brands ready to grow organically.</p>
+    <div class="hgrp">
+      <span class="hey">Short form content that turns views into customers</span>
+      <p class="hs">A creator-led agency. We handle <strong>strategy, scripting, filming and editing</strong> end-to-end for brands ready to grow organically.</p>
+    </div>
   </div>
   <div class="hr">
     <video autoplay muted loop playsinline preload="auto" poster="poster-hero.jpg" src="ASUS Deadline Horizontal Coffee.mp4"></video>
